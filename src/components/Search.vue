@@ -33,8 +33,7 @@
 			<p class="text-bottom">
 				<span class="text-left"><router-link to="/edit" class="btn btn-small btn-warning">Edit</router-link></span>
 				<span class="text-right"><router-link to="/delete" class="btn btn-small btn-danger">Delete</router-link></span>
-			</p> 
-			 
+			</p>  
         </div>
   </div>
   </div>
@@ -52,7 +51,7 @@ export default {
       data: [],
       selected: '',
       squery: '',
-	  searchform:{},
+      searchform:{},
       msg:''
     }
   },
@@ -83,18 +82,15 @@ export default {
         } 
 		
 		//console.log( this.squery );
-		this.get_data(this.squery);
-
+		this.get_data(this.squery); 
        
     },
-	get_data(query) {
- 		this.axios.get('http://localhost:5000/search?'+query)
-              .then(response => {
-                this.data = response.data; 
-		    //console.log(this.data);
-		 
-          })
-	}
+    get_data(query) {
+      this.axios.get('http://localhost:5000/search?'+query)
+                .then(response => {
+                  this.data = response.data;  
+            })
+    }
   },
  watch: { 
   query:  function () {
@@ -103,12 +99,11 @@ export default {
   selected:  function () {
       this.search();
      
-  }	 
- 
+  }	  
  },
    created()  {
-	  this.get_data('title=*&status=true');
-	  console.log(this.data);
+    this.get_data('title=*&status=true');
+    console.log(this.data);
   }
 }
 </script>

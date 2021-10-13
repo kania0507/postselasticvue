@@ -36,6 +36,7 @@
 </template>
 
 <script>
+//import qs from "qs";
 export default {
   name: 'Add',
   data () {
@@ -52,21 +53,20 @@ export default {
   },
   methods: {
     addNew(){
-      var post = { 'title': this.title, 'desc': this.desc, 'url': this.url, 'status': this.status };
-
-
-     this.axios.post("http://localhost:5000/addpost", post)
-      .then(response => {
-          this.postId = response.data.id;
-          //console.log(this.postId);
-      })
-      .catch(error => {
-        this.errorMessage = error.message;
-        console.error("There was an error!", error);
-      }); 
-       
-    }
-
+      var post = { 'title': this.title, 'desc': this.desc, 'url': this.url, 'status': this.status }; 
+      
+      this.axios.post("http://localhost:5000/addpost", post)    
+        .then(response => {
+            console.log('res:'+response);
+            this.postId = response.data.id;
+            //console.log(this.postId);
+        })
+        .catch(error => {
+          this.errorMessage = error.message;
+          console.error("There was an error!", error);
+        }); 
+        
+      } 
   }
 }
 </script> 

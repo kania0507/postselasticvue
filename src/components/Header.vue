@@ -2,7 +2,7 @@
   <div class="header row">   
     <div class="col-12">
     <router-link :to="'/'" class="col-2">Home</router-link> 
-    <router-link :to="'Add'" class="col-2">Add new</router-link>
+    <router-link :to="'Addpost'" class="col-2">Add new</router-link>
     </div>
   </div>
 </template>

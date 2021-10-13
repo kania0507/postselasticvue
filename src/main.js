@@ -13,6 +13,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
 Vue.config.productionTip = false
  
 Vue.use(VueAxios, axios);
+//app.use(express.json());
 
 new Vue({
   el: '#app',

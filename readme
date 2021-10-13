@@ -14,11 +14,12 @@
 ---------------------------
 TO RUN: 
 ---------------------------
+> npm install 
 > npm run serve (localhost:8080)
 
 To run elasticsearch server  (http://localhost:9200):
-> node elasticsearch.js -- create index with json file
-> node server/server	-- run server
+> node server/elasticsearch.js (create index with json file)
+> node server/server	(run server)
 
 
 

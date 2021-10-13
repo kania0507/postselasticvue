@@ -26,8 +26,7 @@ app.get('/search', function (req, res){
     let body = {
       size: 10,
       from: 0,
-      query: {
-		  
+      query: { 
 		"bool": {  
 			"must": {
 				"simple_query_string": {  
@@ -53,8 +52,7 @@ app.get('/search', function (req, res){
 				"term": {
 					"status": req.query['status']
 				}
-			} 
-	  
+			}  
 		} 
             
         }
@@ -74,18 +72,17 @@ app.get('/search', function (req, res){
 
 
   app.post("/addpost", (req, res) => {  
-	
-	var post = 
-		[ 
+	 
+	var post =  
 			{
-				'title': req.title,
-				'desc': req.desc,
-				'url': req.url,
-				'status': req.status
-			}
-		]; 
+				'title': req.body.title,
+				'desc': req.body.desc,
+				'url': req.body.url,
+				'status': req.body.status
+			}; 
 
-	client.bulk({index: 'vue-elastic', type: 'posts_list', body: post });
+	//client.bulk({index: 'vue-elastic', type: 'posts_list', body: post });
+	client.index({index: 'vue-elastic', type: 'posts_list', body: post })
  
 })
   
@@ -106,7 +103,6 @@ app.put("/update/id", (req, res) => {
 		body: sourceData
 	};
 	
-	 
 	var response = client.update(docParam, sourceData);
 	console.log(response);
 
