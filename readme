@@ -1,16 +1,4 @@
 
-    1.) Potrzebujemy prostej strony w której będziemy mogli dodawać/wyświetlać/edytować proste wpisy na stronie (CRUD)
-    2.) Formularz dodawania wpisu powinien zawierać
-        a.) Tytuł
-        b.) Opis html (wysiwyg)
-        c.) Status: aktywne/nieaktywne
-        d.) Możliwość wgrania zdjęć
-    3.) Na listingu wpisów proszę dodać możliwość filtrowania po statusie aktywne/nieaktywne (filtrowanie ma się odbywać za pomocą zapytań do DB)
-    4.) Dodatkowo na listingu proszę dodać wyszukiwarkę (róþwnież w formie zapytań do DB)
-    5.) Do realizacji zadania prosze użyć Vue wraz z Vuex + bootstrapa
-    6.) Jako DB proszę użyć ElasticSearch
-
-
 ---------------------------
 TO RUN: 
 ---------------------------
@@ -20,7 +8,6 @@ TO RUN:
 To run elasticsearch server  (http://localhost:9200):
 > node server/elasticsearch.js (create index with json file)
 > node server/server	(run server)
-
 
 
 
